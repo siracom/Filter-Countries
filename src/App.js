@@ -32,16 +32,6 @@ function App() {
 
   const handleChange = async () => {
     let arr = [];
-    // if (
-    //   name === "" &&
-    //   code === "" &&
-    //   lang === "" &&
-    //   curr === "" &&
-    //   capital === "" &&
-    //   callcode === "" &&
-    //   region === "" &&
-    //   regionbloc === ""
-    // ) {
     await fetch("https://restcountries.eu/rest/v2/all")
       .then((response) => response.json())
       .then((data) => {
@@ -52,11 +42,6 @@ function App() {
         });
       })
       .catch((err) => console.log(err));
-    // dispatch({
-    //   type: actionTypes.SET_COUNTRIES,
-    //   countries: arr,
-    // });
-    // } else {
     name &&
       (await fetch("https://restcountries.eu/rest/v2/name/" + name)
         .then((response) => response.json())
@@ -154,7 +139,6 @@ function App() {
       type: actionTypes.SET_COUNTRIES,
       countries: arr,
     });
-    // }
   };
 
   return (
@@ -257,6 +241,7 @@ function App() {
             setRegionbloc(e.target.value);
           }}
         />
+        <h3>Enter Data to Filter</h3>
       </div>
       <div className="App-body">
         <CountryGrid />
