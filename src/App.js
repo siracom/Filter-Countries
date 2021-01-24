@@ -5,6 +5,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import CountryGrid from "./CountryGrid";
 import { actionTypes } from "./reducer";
 import { useStateValue } from "./StateProvider";
+import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
+import { IconButton } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   field: {
@@ -143,7 +145,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="App-header">
+      <div id="App-header" className="App-header">
         <TextField
           id="name"
           color="primary"
@@ -245,6 +247,13 @@ function App() {
       </div>
       <div className="App-body">
         <CountryGrid />
+      </div>
+      <div id="gotofilters">
+        <a href="#App-header">
+          <IconButton color="secondary">
+            <ArrowUpwardIcon color="secondary" />
+          </IconButton>
+        </a>
       </div>
     </div>
   );

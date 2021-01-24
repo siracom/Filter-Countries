@@ -15,9 +15,22 @@
   color: white;
 }
 
+@media (max-width: 600px) {
+  .App {
+    flex-direction: column;
+    max-height: unset;
+  }
+}
+
 .App-body {
   overflow: auto;
   flex: 1;
   background-color: beige;
   min-height: 100vh;
+}
+
+#gotofilters {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
 }
